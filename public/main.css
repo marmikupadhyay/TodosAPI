@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.row {
+  /* all: initial; */
+  all: unset;
+  display: flex;
+  flex-direction: row;
+}
+.addnote {
+  height: 100vh;
+  position: fixed;
+  /* width: 25%; */
+  margin: 0;
+  z-index: 2;
+}
+.addnote .h1 {
+  margin: 10px;
+}
+.form-container {
+  width: 100%;
+  margin: 0;
+  padding: 10px 40px 20px 40px;
+}
+
+label {
+  font-size: 2em;
+}
+
+input {
+  padding-left: 10px !important;
+  background: white !important;
+}
+
+small {
+  font-size: 0.5em;
+  margin: 0;
+  padding: 0;
+}
+.form-control {
+  width: 80% !important;
+}
+textarea {
+  resize: vertical;
+}
+
+.hide {
+  display: none;
+}
+
+.note-box {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 33.33%;
+  min-height: 100vh;
+  justify-content: space-around;
+}
+
+.card {
+  min-width: 300px;
+  max-width: 500px;
+  min-height: 300px;
+  margin: 20px;
+  border-radius: 0;
+  position: relative;
+  transform: rotate(10deg);
+  height: auto;
+}
+pre {
+  white-space: pre-wrap;
+}
+form .btn {
+  width: 80%;
+}
+
+.card .btn-primary {
+  margin: 10px;
+  border-radius: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.card .btn-danger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  padding: 0;
+  text-align: center;
+  cursor: initial;
+}
+
+.card .btn-danger i {
+  height: 100%;
+  cursor: pointer;
+}
+
+.title {
+  width: 100%;
+  height: 20vh;
+}
+
+@media only screen and (max-width: 690px) {
+  .row {
+    flex-direction: column;
+  }
+  .addnote {
+    position: unset;
+  }
+  .note-box {
+    margin-left: 0;
+  }
+  .card {
+    min-width: 70%;
+    min-height: 250px;
+  }
+}
