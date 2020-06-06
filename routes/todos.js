@@ -15,7 +15,15 @@ router.get("/", (req, res, next) => {
   if (req.query.s !== undefined) {
     limit = req.query.s;
   } else {
-    limit = Todo.count();
+    Todo.count({}, (err, res) => {
+      if (err) {
+        console.log(err);
+      } else {
+        limit = res;
+        console.log(res);
+      }
+    });
+    console.log(limit);
   }
   Todo.find(query)
     .sort({ updated: -1 })
@@ -103,6 +111,7 @@ router.patch("/", (req, res, next) => {
 
 //Request for Deletion
 router.delete("/", (req, res, next) => {
+  console.log("req recived");
   if (req.query.id !== undefined) {
     Todo.findOneAndRemove({ _id: req.query.id })
       .then(todo => {
